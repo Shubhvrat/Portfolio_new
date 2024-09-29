@@ -1,6 +1,5 @@
 import React from 'react';
-import { ReactTyped as Typed } from 'react-typed'; // Use ReactTyped with alias
-
+import { ReactTyped as Typed } from 'react-typed'; 
 function TypingEffect() {
     return (
         <div className="typing-effect text-3xl text-center text-green-700">
@@ -15,9 +14,9 @@ function TypingEffect() {
                     'HTML & CSS',
                     'SQL',
                 ]}
-                typeSpeed={100} // Speed of typing
-                backSpeed={50} // Speed of deleting
-                loop // Loop indefinitely
+                typeSpeed={100} 
+                backSpeed={50}
+                loop 
             />
         </div>
     );

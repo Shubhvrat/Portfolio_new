@@ -8,7 +8,7 @@ function GitHub() {
     const token = process.env.REACT_APP_GITHUB_TOKEN;
 
     useEffect(() => {
-        // Fetch all public repositories
+     
         axios
             .get(`https://api.github.com/users/${username}/repos`, {
                 headers: {
