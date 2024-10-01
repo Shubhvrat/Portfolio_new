@@ -24,7 +24,7 @@ function GitHub() {
                 setLoading(false);
             }
         };
-        
+
         fetchRepos();
     }, [username, token]);
 
@@ -52,11 +52,11 @@ function GitHub() {
     }
 
     return (
-        <section id="github" className="py-20 px-6 bg-gray-900 text-white">
+        <section id="github" className="py-20 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-900 text-white">
             <h2 className="text-4xl text-center font-bold mb-10">GitHub Repositories</h2>
             <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {repos.map((repo) => (
-                    <div key={repo.id} className="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <div key={repo.id} className="bg-gray-800 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 w-full">
                         <h3 className="text-2xl font-bold mb-2 text-center">{repo.name}</h3>
                         <p className="text-gray-400 mb-4">{repo.description || 'No description available'}</p>
                         <div className="flex justify-between items-center mt-2">
