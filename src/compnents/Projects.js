@@ -1,27 +1,59 @@
 import React from 'react';
+import { FaPython } from 'react-icons/fa'; 
+import { SiStreamlit, SiVisualstudiocode } from 'react-icons/si'; 
+import computerImage from './computer.jpg'; 
 
-const projects = [
-    { name: 'Project One', description: 'Description of the first project.', link: '#', image: 'Project1.jpg' },
-    { name: 'Project Two', description: 'Description of the second project.', link: '#', image: 'project2.jpg' },
-    // Add more projects here
-];
 
-function Projects() {
-    return (
-        <section id="projects" className="py-20 px-6 bg-gray-900">
-            <h2 className="text-4xl text-center font-bold mb-10">Projects</h2>
-            <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {projects.map((project, index) => (
-                    <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-md mb-4" />
-                        <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-                        <p className="text-gray-400 mb-4">{project.description}</p>
-                        <a href={project.link} className="text-indigo-500 hover:underline">View Project</a>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+function ProjectCard({ title, techStack }) {
+  return (
+    <div className="project-card bg-gray-800 text-white rounded-lg shadow-lg p-6 transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
+      <h3 className="text-2xl font-bold mb-4 text-center">{title}</h3>
+
+
+      <div className="project-image h-64 w-full mb-4 flex justify-center">
+        <img src={computerImage} alt="3D Computer" className="rounded-lg h-48" />
+      </div>
+
+
+      <div className="tech-stack text-center mt-4">
+        <h4 className="text-xl font-semibold mb-2">Tech Stack</h4>
+        <ul className="flex justify-center space-x-6">
+          {techStack.map((tech, index) => (
+            <li key={index} className="text-4xl text-blue-500 flex items-center">
+              {tech === 'Python' && <FaPython />}
+              {tech === 'Streamlit' && <SiStreamlit />}
+              {tech === 'VSCode' && <SiVisualstudiocode />}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 }
 
-export default Projects;
+function ProjectSection() {
+  return (
+    <div className="projects-container bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-12 px-4">
+      <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <ProjectCard
+          title="Amazon Product System"
+          techStack={['Python', 'Streamlit', 'VSCode']}
+        />
+        <ProjectCard
+          title="Conference Management System"
+          techStack={['Python', 'Streamlit', 'VSCode']}
+        />
+        <ProjectCard
+          title="TrackCrypto"
+          techStack={['Python', 'Streamlit', 'VSCode']}
+        />
+    
+      </div>
+    </div>
+  );
+}
+
+export default ProjectSection;
