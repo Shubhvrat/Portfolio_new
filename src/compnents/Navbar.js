@@ -32,8 +32,8 @@ function Header() {
         {/* Navbar - align elements vertically on mobile */}
         <nav className={`mt-4 md:mt-0 md:flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8 ${isOpen ? 'block' : 'hidden'}`}>
           <a href="#" className="hover:text-gray-400 block text-lg" aria-label="Home">Home</a>
-          <a href="#projects" className="hover:text-gray-400 block text-lg" aria-label="Projects">Projects</a>
-          <a href="#" className="hover:text-gray-400 block text-lg" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#Projects" className="hover:text-gray-400 block text-lg" aria-label="Projects">Projects</a>
+          <a href="https://www.linkedin.com/in/shubhvratkulkarni/" className="hover:text-gray-400 block text-lg" aria-label="LinkedIn">LinkedIn</a>
           <a href="#contact" className="hover:text-gray-400 block text-lg" aria-label="Contact">Contact</a>
         </nav>
       </div>
